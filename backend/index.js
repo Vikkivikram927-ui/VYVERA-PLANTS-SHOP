@@ -8,10 +8,18 @@ import fs from "fs"
 import mongoose from "mongoose"
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
+import { v2 as cloudinary } from "cloudinary"
+import { CloudinaryStorage } from "multer-storage-cloudinary"
 
 const port = process.env.PORT || 4000
 const baseUrl = process.env.BASE_URL || `http://localhost:${port}`
 const app = express()
+
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+})
 
 app.use(express.json())
 app.use(cors())
@@ -26,11 +34,9 @@ app.get('/', (req, res) => {
     res.send("the express server is running successful")
 })
 
-const storage = multer.diskStorage({
-    destination: "./upload/images",
-    filename: (req, file, cb) => {
-        cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
-    }
+const storage = new CloudinaryStorage({
+    cloudinary,
+    params: { allowed_formats: ["jpg", "jpeg", "png", "webp"] }
 })
 const upload = multer({ storage })
 
@@ -42,7 +48,7 @@ app.post('/upload', upload.single('productimage'), (req, res) => {
     }
     res.json({
         success: true,
-        image_URL: `${baseUrl}/images/${req.file.filename}`
+        image_URL: req.file.path
     })
 })
 
