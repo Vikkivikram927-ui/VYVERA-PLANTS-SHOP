@@ -7,6 +7,7 @@ import path from "path"
 import fs from "fs"
 import mongoose from "mongoose"
 import jwt from "jsonwebtoken"
+import bcrypt from "bcrypt"
 
 const port = process.env.PORT || 4000
 const baseUrl = process.env.BASE_URL || `http://localhost:${port}`
@@ -130,9 +131,10 @@ app.post('/signup', async (req, res) => {
         cart[i] = 0
     }
 
+       const hashedPassword = await bcrypt.hash(req.body.password, 10)
     const user = new Users({
         name: req.body.username,
-        password: req.body.password,
+        password: hashedPassword,
         email: req.body.email,
         cartData: cart,
     })
@@ -154,7 +156,7 @@ app.post('/signup', async (req, res) => {
 app.post("/login", async (req, res) => {
     let user = await Users.findOne({ email: req.body.email });
     if (user) {
-        const passCompare = req.body.password === user.password;
+        const passCompare = await bcrypt.compare(req.body.password, user.password) 
         if (passCompare) {
             const data = {
                 user: {
