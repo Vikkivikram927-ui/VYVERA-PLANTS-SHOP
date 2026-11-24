@@ -1,0 +1,96 @@
+.sign-page-main {
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #809ace;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+ 
+.sign-in-page {
+  width: 100%;
+  max-width: 22rem;
+  background: #fff;
+  border: 1px solid #e3e6eb;
+  border-radius: 12px;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+ 
+.sign-in-page h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  text-transform: capitalize;
+}
+ 
+.sign-center {
+  display: flex;
+  flex-direction: column;
+}
+ 
+.sign-center br {
+  display: none; /* spacing is handled by CSS, so the <br> tags aren't needed */
+}
+ 
+.sign-center label {
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  text-transform: capitalize;
+  text-align: left;
+}
+ 
+.sign-center input {
+  font: inherit;
+  padding: 0.7rem 0.8rem;
+  margin-bottom: 1.1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  color: #111827;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+ 
+.sign-center input::placeholder {
+  color: #9ca3af;
+}
+ 
+.sign-center input:focus {
+  outline: none;
+  border-color: #111827;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.12);
+}
+ 
+.sign-in-page button {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.75rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: #111827;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: background 0.15s;
+}
+ 
+.sign-in-page button:hover {
+  background: #272f42;
+}
+ 
+.sign-in-page button:focus-visible {
+  outline: 3px solid #93a4ff;
+  outline-offset: 2px;
+}
+
+.checkboe-page{
+  font-size: 14px;
+}

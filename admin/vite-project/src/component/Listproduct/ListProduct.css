@@ -1,0 +1,117 @@
+.all-products-list h2 {
+    text-transform: capitalize;
+    border: 1px solid black;
+    width: 170px;
+    padding: 5px 5px;
+    border-radius: 8px;
+}
+
+.data-product-list-details img {
+    width: 90px;
+    height: 90px;
+}
+
+.data-product-list-details {
+    display: flex;
+    padding: 20px 20px;
+    border: none;
+    border-bottom: 2px solid rgb(184, 162, 162);
+    background: transparent;
+    background-color: beige;
+
+}
+
+.data-product-list-details h3 {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: left;
+    margin-top: 45px;
+    margin-left: 100px;
+    text-transform: capitalize;
+}
+
+.data-product-list-details i {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    align-items: center;
+    font-style: normal;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.data-product-list-details h5 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    text-transform: capitalize;
+    margin-top: 45px;
+    margin-left: 60px;
+    font-family: sans-serif;
+}
+
+.data-product-list-details p {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 40px;
+    text-transform: capitalize;
+    margin-left: 90px;
+}
+
+.svg-icons svg {
+    width: 20px;
+    height: 20px;
+    margin-top: 40px;
+    margin-left: 80px;
+    color: brown;
+}
+
+
+@media(max-width:500px) {
+    .all-products-list h2 {
+        font-size: 15px;
+        margin-left: 160px;
+        width: 110px;
+
+    }
+
+    .data-product-list-details {
+        width: 100%;
+        height: 100%;
+        font-size: 15px;
+        padding: 2px;
+        gap: 0;
+        margin: 0;
+    }
+
+    .data-product-list-details img {
+        width: 50px;
+        height: 50px;
+        margin-left: 20px;
+        margin-top: 40px;
+    }
+    .data-product-list-details i{
+        margin-left: 20px;
+    }
+
+    .data-product-list-details h3{
+        font-size: 15px;
+        margin-left: 40px;
+    }
+    .data-product-list-details h5{
+        margin-left: -10px;
+        
+    }
+    .data-product-list-details p {
+        margin-left: -5px;
+        font-size: 11px;
+    }
+    .svg-icons svg{
+        margin-left: 10px;
+    }
+
+}

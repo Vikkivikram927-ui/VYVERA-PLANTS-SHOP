@@ -1,0 +1,252 @@
+.cart-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 35px;
+    padding: 30px 50px;
+    box-sizing: border-box;
+}
+
+/* Left side: products */
+.cart-products {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Each product */
+.cart-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Product image + details */
+.cartitems-format {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    min-width: 0;
+}
+
+.image-cart-item {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
+.puma-qty-pass {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.puma-qty-pass h4 {
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: 800;
+    margin: 0;
+}
+
+.puma-qty-pass p {
+    text-transform: capitalize;
+    font-family: sans-serif;
+    margin: 0;
+    color: #666;
+    text-shadow: none;
+}
+
+.puma-qty-pass i {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-style: normal;
+    color: #234b35;
+}
+
+/* Quantity and delete */
+.qty-and-cart {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.qty-icons-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+
+.qty-button,
+.qty-button-query,
+.delete-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.qty-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.quantity-number {
+    padding: 0;
+}
+
+.delete-icon {
+    color: #c0392b;
+    font-size: 22px;
+}
+
+.qty-icons-button:hover {
+    background-color: #f5f5f5;
+    color: #234b35;
+}
+
+/* Cart summary */
+.cart-summary {
+    width: 100%;
+    max-width: 420px;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 25px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 20px;
+}
+
+.cart-summary h2 {
+    margin-bottom: 25px;
+    color: #234b35;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+    color: #444;
+}
+
+.discount {
+    color: #218838;
+}
+
+.final-total {
+    color: #234b35;
+    margin-top: 20px;
+}
+
+.final-total h3 {
+    margin: 0;
+}
+
+.delivery-message {
+    color: #218838;
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 14px;
+    background: #234b35;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.checkout-btn:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.checkout-btn:hover:not(:disabled) {
+    background: #183725;
+}
+
+@media(max-width:800px) {
+    .cartitems-format img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .puma-qty-pass {
+        font-size: 10px;
+    }
+
+    .qty-icons-button {
+        height: 20px;
+        width: 50px;
+    }
+
+    .delete-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .cart-summary {
+        width: 400px;
+        height: 440px;
+    }
+
+}
+
+@media(max-width:500px) {
+    .cartitems-format img {
+        width: 30px;
+        height: 30px;
+        margin-left: -20px;
+    }
+
+    .qty-and-cart{
+        margin-left: 60px;
+        margin-top: 20px;
+    }
+
+    .qty-icons-button{
+        width: 40px;
+        height: 20px;
+        font-size: 12px;
+        border-radius: 10px;
+    }
+
+    .qty-icons-button svg{
+        font-size: 8px;
+    }
+
+    .cart-summary {
+        width: 230px;
+        height: 400px;
+        font-size: 13px;
+        margin-left: 160px;
+        margin-top: -20px;
+    }
+}

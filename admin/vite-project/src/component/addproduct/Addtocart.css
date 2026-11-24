@@ -1,0 +1,106 @@
+.upload-form svg {
+    border: 1px solid black;
+    height: 60px;
+    width: 60px;
+    padding: 10px 20px;
+}
+
+.entry-column {
+    background-color: beige;
+    width: 80%;
+    height: 100vh;
+    padding: 30px;
+}
+
+.product-name input {
+    width: 60%;
+    height: 4vh;
+}
+
+.product-price input {
+    width: 30%;
+    height: 4vh;
+}
+
+.product-decription {
+    margin-left: 340px;
+    margin-top: -82px;
+}
+
+.product-decription input {
+    width: 41%;
+    height: 4vh;
+}
+
+.select-categry {
+    width: 12%;
+    height: 6vh;
+}
+
+.buttob-add-image {
+    width: 17%;
+    height: 6vh;
+    background-color: rgb(61, 61, 138);
+    font-size: 18px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 6px;
+}
+
+@media(max-width:800px) {
+    .entry-column {
+        padding: 30px;
+    }
+
+    .select-categry {
+        width: 17%;
+        height: 3vh;
+    }
+
+    .product-name input {
+        width: 80%;
+        height: 2vh;
+    }
+
+    .product-price input {
+        width: 30%;
+        height: 2vh;
+    }
+
+    .product-decription input {
+        width: 70%;
+        height: 2vh;
+    }
+
+    .product-decription {
+        margin-left: 200px;
+    }
+
+    .buttob-add-image {
+        width: 16%;
+        height: 3vh;
+    }
+
+}
+
+.upload-preview {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+@media(max-width:500px) {
+
+    .entry-column {
+        padding: 50px;
+    }
+
+    .product-decription input {
+        width: 70%;
+        height: 2vh;
+    }
+    .product-decription {
+        margin-left: 130px;
+    }
+}

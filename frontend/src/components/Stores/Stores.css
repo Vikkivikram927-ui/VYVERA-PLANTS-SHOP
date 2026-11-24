@@ -1,0 +1,75 @@
+/* ---------- Wrapper: responsive grid ---------- */
+.stores-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ---------- Card ---------- */
+.stores-one {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-sizing: border-box;
+  padding: 22px;
+  background-color: rgb(236, 224, 208);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+/* ---------- Store name ---------- */
+.stores-one h2 {
+  margin: 0;
+  padding-bottom: 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #3b2a1a;
+  border-bottom: 2px solid rgba(59, 42, 26, 0.25);
+}
+
+/* ---------- Rows (icon + text) ---------- */
+.store-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.store-row p,
+.store-row i {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #4a3a2a;
+}
+
+.store-row i {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ---------- Icons ---------- */
+.store-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  padding: 7px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: #3b2a1a;
+  color: rgb(236, 224, 208);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .stores-wrapper {
+    grid-template-columns: 1fr;
+    padding: 20px 14px;
+  }
+}

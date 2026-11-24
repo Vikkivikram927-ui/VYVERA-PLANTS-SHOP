@@ -1,0 +1,7 @@
+.shop-cetegary-page{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 20px;
+    gap: 24px;
+    margin-top: -40px;
+}
