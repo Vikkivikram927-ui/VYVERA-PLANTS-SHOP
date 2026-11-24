@@ -11,7 +11,7 @@ function Admin() {
             <div className="admin">
             <SideBar />
             <Routes>
-                <Route path="/" element={<Navigate to="/listproduct" replace />} />
+                <Route path="/" element={<Navigate to="/productlist" replace />} />
                 <Route path="/addproduct" element={<AddtocartPage/>} />
                 <Route path="/productlist" element={<ListProduct />} />
             </Routes>
