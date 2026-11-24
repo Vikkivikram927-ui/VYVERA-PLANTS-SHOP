@@ -2,7 +2,7 @@
 import AddtocartPage from "../component/addproduct/Addtocart"
 import ListProduct from "../component/Listproduct/ListProduct"
 import SideBar from "../component/sidebar/sidebar"
-import { Route,Routes } from "react-router-dom"
+import { Route,Routes,Navigate } from "react-router-dom"
 import "./Admin.css"
 
 function Admin() {
