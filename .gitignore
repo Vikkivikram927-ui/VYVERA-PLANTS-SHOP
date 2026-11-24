@@ -4,3 +4,4 @@ build/
 dist/
 upload/images/
 .DS_Store
+*.xlsx
