@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import ProductItem from "../productitem/Productitems";
+import { API } from "../../config";
 
 function SearchResults() {
   const [searchParams] = useSearchParams();
@@ -10,7 +11,7 @@ function SearchResults() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:4000/searchproducts?q=${encodeURIComponent(q)}`)
+    fetch(`${API}/searchproducts?q=${encodeURIComponent(q)}`)
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => console.error("search failed:", err))

@@ -1,12 +1,13 @@
 import "./Plantspage.css"
 import { useEffect, useState } from "react"
 import ProductItem from "../productitem/Productitems"
+import { API } from "../../config"
 function PlantsPage() {
 
 const [homepageproduct,setHomePageProduct]=useState([])
 
 useEffect(()=>{
-  fetch('http://localhost:4000/homepageproducts')
+  fetch(`${API}/homepageproducts`)
   .then((responce)=>responce.json())
   .then((data)=>setHomePageProduct(data))
 },[])

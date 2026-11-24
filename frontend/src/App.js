@@ -25,6 +25,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
+          
           <Route path='/' element={<Home />} />
           <Route path='/plants' element={<Plants categery="plants" />} />
           <Route path='/Seeds' element={<Seeds categery="seeds" />} />

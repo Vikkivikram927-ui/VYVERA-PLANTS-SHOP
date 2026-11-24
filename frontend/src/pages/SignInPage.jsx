@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import "./SignInPage.css"
+import { API } from "../config";
 
 function SignInPage() {
 
@@ -18,7 +19,7 @@ function SignInPage() {
     const Login = async () => {
         console.log("Log In Function Executed", formData)
         let responceData;
-        await fetch("http://localhost:4000/login", {
+        await fetch(`${API}/login`, {
             method: "POST",
             headers: {
                 Accept: "application/form-Data",
@@ -37,7 +38,7 @@ function SignInPage() {
     const Create = async () => {
         console.log("create functionIn Function Executed", formData)
         let responceData;
-        await fetch("http://localhost:4000/signup", {
+        await fetch(`${API}/signup`, {
             method: "POST",
             headers: {
                 Accept: "application/form-Data",

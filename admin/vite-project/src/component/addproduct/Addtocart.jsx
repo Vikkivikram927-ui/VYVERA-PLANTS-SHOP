@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Addtocart.css"
 import { FaCloudUploadAlt } from "react-icons/fa";
+import { API } from "../../config";
 
 
 function AddtocartPage() {
@@ -32,7 +33,7 @@ function AddtocartPage() {
         let formData = new FormData();
         formData.append('productimage', image);
 
-        await fetch('http://localhost:4000/upload',
+        await fetch(`${API}/upload`,
             {
                 method: "POST",
                 headers: {
@@ -45,7 +46,7 @@ function AddtocartPage() {
 
         if (responceData.success) {
             product.image = responceData.image_URL;
-            await fetch('http://localhost:4000/addproducts', {
+            await fetch(`${API}/addproducts`, {
                 method: "POST",
                 headers: {
                     Accept: "application/json",
