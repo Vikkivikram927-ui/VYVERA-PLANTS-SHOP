@@ -2,6 +2,7 @@ import { useState } from "react"
 import "./ListProduct.css"
 import { useEffect } from "react";
 import { AiTwotoneDelete } from "react-icons/ai";
+import { API } from "../../config";
 
 function ListProduct(){
 
