@@ -3,6 +3,7 @@ import "./CartItemPage.css";
 import { MdDelete } from "react-icons/md";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { ShopContext } from "../../context/ShopContext";
+import { useNavigate } from "react-router-dom";
 
 const FREE_SHIPPING_MIN = 599;
 
@@ -14,6 +15,8 @@ function CartItemPage() {
         RemoveToCart,
         DeleteFromCart
     } = useContext(ShopContext);
+
+    const navigate = useNavigate();
 
     // Total quantity
     const totalCartItems = Object.values(cartItem).reduce(
@@ -153,7 +156,7 @@ function CartItemPage() {
                     type="button"
                     className="checkout-btn"
                     disabled={totalCartItems === 0}
-                    onClick={() => alert("Connect your checkout page here!")}
+                    onClick={() => navigate("/checkout")}
                 >
                     Proceed to Checkout
                 </button>

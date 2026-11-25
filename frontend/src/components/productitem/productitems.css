@@ -7,8 +7,10 @@
 }
 
 .product-items {
-    width: 100%;                 /* fills its grid column */
-    height: auto;                /* grows with content, no fixed 420px */
+    width: 100%;
+    /* fills its grid column */
+    height: auto;
+    /* grows with content, no fixed 420px */
     box-sizing: border-box;
     padding: 10px;
     background-color: rgb(236, 236, 185);
@@ -19,9 +21,11 @@
 }
 
 .product-items img {
-    width: 100%;                 /* fills the card */
+    width: 100%;
+    /* fills the card */
     height: auto;
-    aspect-ratio: 1 / 1;         /* keeps all images square */
+    aspect-ratio: 1 / 1;
+    /* keeps all images square */
     object-fit: cover;
     border-radius: 10px;
     padding: 0;
@@ -46,21 +50,38 @@
         padding: 8px;
         gap: 10px;
     }
+
     .product-items {
         padding: 8px;
     }
 }
 
-@media (min-width: 360px) and (max-width: 390px){
-   .shop-cetegary-page {
-        padding: 5px;
+@media (min-width: 360px) and (max-width: 390px) {
+    .shop-cetegary-page {
         gap: 10px;
     }
+
     .product-items {
-        padding: 8px;
+        font-size: 7px;
+    }
+
+    .product-items img {
+        height: 90px;
+        width: 90px;
     }
 }
 
-@media (min-width: 391px) and (max-width: 450px){
+@media (min-width: 391px) and (max-width: 450px) {
+    .shop-cetegary-page {
+        gap: 10px;
+    }
 
+    .product-items {
+        font-size: 7px;
+    }
+
+    .product-items img {
+        height: 90px;
+        width: 90px;
+    }
 }

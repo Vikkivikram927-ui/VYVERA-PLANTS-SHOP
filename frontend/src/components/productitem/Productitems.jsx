@@ -12,7 +12,7 @@ function ProductItem(props){
                 <Link to={`/SpaProduct/${props.id}`}><img onClick={()=>window.scrollTo(0,0)} src={props.image} alt="pink princess" /></Link>
                 <h3>{props.name}</h3>
                 <i>"{props.description}"</i>
-                <p>${props.price}</p>
+                <p>₹{props.price}</p>
             </div>
         </>
     )

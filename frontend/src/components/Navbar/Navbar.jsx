@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ShopContext } from "../../context/ShopContext";
 import { FiAlignJustify, FiSearch, FiX } from "react-icons/fi"            // NEW: added FiSearch, FiX
 
+
 function Navbar() {
 
     const { getTotalCartItem } = useContext(ShopContext);
@@ -56,7 +57,7 @@ function Navbar() {
                 <div className="navbar-bottom">
                     <div className="navbar-bottom-frist">
                         <img src={logo} alt="shopers" />
-                        <p>vyvera</p>
+                        <p className="vyvera-ttile-name">vyvera</p>
                     </div>
 
                     <ul ref={menuRef} className="navbar-menu">
@@ -67,6 +68,7 @@ function Navbar() {
                         <Link style={{ textDecoration: "none" }} to="/products"><li>products <RxChevronDown /></li></Link>
                         <Link style={{ textDecoration: "none" }} to="/plantcare"><li>plant care <RxChevronDown /></li></Link>
                         <Link style={{ textDecoration: "none" }} to="/stores"><li>stores <RxChevronDown /></li></Link>
+                        <Link style={{ textDecoration: "none", color: "black" }} to="/my-orders" ><li>my orders<RxChevronDown /></li></Link>
                     </ul>
 
                     {/* CHANGED: added dynamic className and the ref on the input */}
@@ -94,7 +96,6 @@ function Navbar() {
                         >
                             {showSearch ? <FiX /> : <FiSearch />}
                         </button>
-
                         <Link style={{ textDecoration: "none", color: "black" }} to="/signin"><p><CgProfile /></p></Link>
                         <Link style={{ textDecoration: "none", color: "black" }} to="/cartpage"><p><FaShoppingCart /></p></Link>
                         <div className="navbar-count-button">{getTotalCartItem()}</div>

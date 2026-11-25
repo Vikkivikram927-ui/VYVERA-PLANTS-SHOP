@@ -1,0 +1,341 @@
+/* Shared by CheckoutPage, OrderSuccess and MyOrders */
+
+.checkout-page,
+.success-page,
+.orders-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+
+.flow-message {
+    text-align: center;
+    padding: 60px 20px;
+    color: #444;
+}
+
+/* ============ CHECKOUT ============ */
+.checkout-page {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 30px;
+    align-items: start;
+}
+
+.checkout-form h2,
+.checkout-summary h2 {
+    margin: 0 0 16px;
+    color: #234b35;
+}
+
+.checkout-form h2:not(:first-child) {
+    margin-top: 30px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+    min-width: 0;
+}
+
+.field label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.field input {
+    padding: 11px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.field input:focus {
+    outline: none;
+    border-color: #234b35;
+}
+
+.field-error {
+    color: #c0392b;
+    font-size: 13px;
+}
+
+.field-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.payment-option.selected {
+    border-color: #234b35;
+    background: #f1f8f3;
+}
+
+.server-error {
+    color: #c0392b;
+    margin: 16px 0 0;
+}
+
+.place-order-btn,
+.flow-btn {
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    background: #234b35;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.place-order-btn:hover:not(:disabled),
+.flow-btn:hover {
+    background: #183725;
+}
+
+.place-order-btn:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.flow-btn.secondary {
+    background: #fff;
+    color: #234b35;
+    border: 1px solid #234b35;
+}
+
+.flow-btn.secondary:hover {
+    background: #f1f8f3;
+}
+
+/* ============ SUMMARY (checkout, success, orders) ============ */
+.checkout-summary {
+    padding: 22px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    background: #fff;
+    position: sticky;
+    top: 20px;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+}
+
+.summary-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.summary-item > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.summary-item-name {
+    margin: 0;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.summary-item-qty {
+    margin: 2px 0 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 10px 0;
+    color: #444;
+}
+
+.summary-line.total {
+    font-weight: 800;
+    font-size: 18px;
+    color: #234b35;
+}
+
+.green {
+    color: #218838;
+}
+
+/* ============ ORDER SUCCESS ============ */
+.success-page {
+    max-width: 700px;
+    text-align: center;
+}
+
+.success-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: #218838;
+    color: #fff;
+    font-size: 40px;
+    line-height: 72px;
+}
+
+.success-page h1 {
+    margin: 0 0 8px;
+    color: #234b35;
+}
+
+.success-sub {
+    color: #555;
+    margin-bottom: 24px;
+}
+
+.success-card {
+    text-align: left;
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.success-card h3 {
+    margin: 0 0 10px;
+    color: #234b35;
+}
+
+.success-card p {
+    margin: 4px 0;
+}
+
+.success-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.success-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+/* ============ MY ORDERS ============ */
+.orders-page h1 {
+    margin: 0 0 20px;
+    color: #234b35;
+}
+
+.order-card {
+    padding: 20px;
+    margin-bottom: 18px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.order-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.order-id {
+    margin: 0;
+    font-weight: 700;
+}
+
+.order-date {
+    margin: 2px 0 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.order-card-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    color: #444;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+    background: #e8f1ff;
+    color: #1d4ed8;
+}
+
+.status-badge.delivered { background: #e3f6e8; color: #218838; }
+.status-badge.cancelled { background: #fde8e8; color: #c0392b; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 800px) {
+    .checkout-page {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .checkout-summary {
+        position: static;
+        order: -1;   /* summary on top, form below */
+    }
+}
+
+@media (max-width: 500px) {
+    .checkout-page,
+    .success-page,
+    .orders-page {
+        padding: 16px 12px;
+    }
+
+    .field-row,
+    .success-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0 14px;
+    }
+
+    .success-actions {
+        flex-direction: column;
+    }
+
+    .order-card {
+        padding: 14px;
+    }
+}

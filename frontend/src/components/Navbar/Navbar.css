@@ -338,7 +338,7 @@
 
     .search-icon-btn {
         display: block;
-        margin-left: -24px;
+        padding-left: 8px;
     }
 
     .navbar-search-place {
@@ -368,12 +368,18 @@
     }
 
     .menu-ref-visible {
-        width: 43%;
-        height: 300px;
+        width: 60%;
+        height: 380px;
         background-color: black;
         margin-left: 140px;
         margin-top: 80px;
     }
+
+    .navbar-bottom-frist .vyvera-ttile-name {
+        margin-left: -5px;
+        /* moves the text 30px to the right */
+    }
+
 
 }
 
@@ -394,11 +400,12 @@
 
     .search-icon-btn {
         display: block;
-        margin-left: 5px;
+        margin-left: 15px;
     }
 
     .navbar-search-place {
-        display: none;               /* hidden until the icon is clicked */
+        display: none;
+        /* hidden until the icon is clicked */
     }
 
     .navbar-search-place.search-open {
@@ -424,10 +431,16 @@
     }
 
     .menu-ref-visible {
-        width: 39%;
-        height: 300px;
+        width: 60%;
+        height: 360px;
         background-color: black;
-        margin-left: 190px;          /* a bit more than 140px because the screen is wider */
+        margin-left: 190px;
+        /* a bit more than 140px because the screen is wider */
         margin-top: 80px;
     }
+    .navbar-bottom-frist .vyvera-ttile-name {
+        margin-left: 20px;
+        /* moves the text 30px to the right */
+    }
+
 }
