@@ -28,7 +28,7 @@
 
 }
 
-.button-in-intrance button{
+.button-in-intrance button {
     margin-top: 60px;
     margin-right: 400px;
     gap: 200px;
@@ -42,6 +42,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .button-icons {
     margin-right: 850px;
     justify-content: space-between;
@@ -130,128 +131,254 @@
     font-size: 10px;
 }
 
-@media(max-width:1024px){
+@media(max-width:1024px) {
 
-    .han-writte-handi img{
+    .han-writte-handi img {
         width: 1024px;
         height: 500px;
     }
-    .main-entrace h1{
+
+    .main-entrace h1 {
         font-weight: 700;
         font-size: 22px;
     }
-    .after-main-logo{
+
+    .after-main-logo {
         font-size: 15px;
         margin-right: -40px;
         margin-top: 50px;
     }
-    .button-in-intrance button{
+
+    .button-in-intrance button {
         width: 210px;
         height: 40px;
         align-items: center;
-        font-size: 12px;;
+        font-size: 12px;
+        ;
         justify-content: center;
     }
-    .icon-circle{
+
+    .icon-circle {
         width: 50px;
         height: 50px;
     }
-    .after-main-entrance h3{
+
+    .after-main-entrance h3 {
         font-size: 15px;
     }
-     .after-main-entrance p{
+
+    .after-main-entrance p {
         font-size: 5px;
-     }
-    .after-main-entrance{
+    }
+
+    .after-main-entrance {
         gap: 40px 40px;
         padding: 40px 40px;
     }
 }
-@media(max-width:800px){
 
-    .han-writte-handi img{
+@media(max-width:800px) {
+
+    .han-writte-handi img {
         width: 800px;
         height: 500px;
     }
-    .main-entrace h1{
+
+    .main-entrace h1 {
         font-weight: 700;
         font-size: 18px;
         margin-left: 30px;
         text-transform: uppercase;
     }
-    .after-main-logo{
+
+    .after-main-logo {
         font-size: 12px;
         margin-top: 50px;
         margin-bottom: 10px;
         padding-left: 100px;
-        
+
     }
-    .button-in-intrance button{
+
+    .button-in-intrance button {
         width: 210px;
         height: 40px;
         align-items: center;
-        font-size: 12px;;
+        font-size: 12px;
+        ;
         justify-content: center;
     }
-    .icon-circle{
+
+    .icon-circle {
         width: 60px;
         height: 60px;
     }
-    .after-main-entrance h3{
+
+    .after-main-entrance h3 {
         font-size: 15px;
     }
-     .after-main-entrance p{
+
+    .after-main-entrance p {
         font-size: 3px;
-     }
-    .after-main-entrance{
+    }
+
+    .after-main-entrance {
         gap: 40px 10px;
         padding: 40px 40px;
     }
 }
 
-@media(max-width:500px){
+@media(max-width:500px) {
 
-    .han-writte-handi img{
+    .han-writte-handi img {
         width: 500px;
         height: 500px;
     }
-    .main-entrace h1{
-        font-weight:700;
+
+    .main-entrace h1 {
+        font-weight: 700;
         font-size: 12px;
         margin-left: 30px;
         text-transform: uppercase;
         margin-left: 80px;
     }
-    .after-main-logo{
+
+    .after-main-logo {
         font-size: 8px;
         margin-top: 10px;
         margin-bottom: 10px;
         padding-left: 200px;
         line-height: 1.5;
         overflow-wrap: break-word;
-        
+
     }
-    .button-in-intrance button{
+
+    .button-in-intrance button {
         width: 110px;
         height: 30px;
         align-items: center;
-        font-size: 10px;;
+        font-size: 10px;
+        ;
         justify-content: center;
-        
+
     }
-    .button-in-intrance{
+
+    .button-in-intrance {
         padding-left: 100px;
     }
-    .icon-circle{
+
+    .icon-circle {
         width: 50px;
         height: 50px;
     }
-    .after-main-entrace h1{
+
+    .after-main-entrace h1 {
         width: 100%;
         font-size: 11px;
         margin-left: -90px;
-        
-        
+
+
     }
 
+}
+
+@media (min-width: 360px) and (max-width: 390px) {
+    .han-writte-handi img {
+        width: 100%;
+        height: 500px;
+    }
+
+    .main-entrace h1 {
+        font-size: 5px;
+        text-transform: capitalize;
+        padding-left: 60px;
+
+    }
+
+    .after-main-logo {
+        font-size: 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 250px;
+        line-height: 1.5;
+        overflow-wrap: break-word;
+
+    }
+
+    .button-in-intrance button {
+        width: 110px;
+        height: 30px;
+        align-items: center;
+        font-size: 10px;
+        ;
+        justify-content: center;
+
+    }
+
+    .button-in-intrance {
+        padding-left: 60px;
+    }
+
+    .icon-circle {
+        width: 50px;
+        height: 50px;
+    }
+
+    .after-main-entrace h1 {
+        width: 100%;
+        font-size: 11px;
+        margin-left: -90px;
+
+
+    }
+}
+
+@media (min-width: 391px) and (max-width: 450px) {
+     .han-writte-handi img {
+        width: 100%;
+        height: 500px;
+    }
+
+    .main-entrace h1 {
+        font-size: 5px;
+        text-transform: capitalize;
+        padding-left: 60px;
+
+    }
+
+    .after-main-logo {
+        font-size: 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 250px;
+        line-height: 1.5;
+        overflow-wrap: break-word;
+
+    }
+
+    .button-in-intrance button {
+        width: 110px;
+        height: 30px;
+        align-items: center;
+        font-size: 10px;
+        ;
+        justify-content: center;
+
+    }
+
+    .button-in-intrance {
+        padding-left: 80px;
+    }
+
+    .icon-circle {
+        width: 50px;
+        height: 50px;
+    }
+
+    .after-main-entrace h1 {
+        width: 100%;
+        font-size: 11px;
+        margin-left: -90px;
+
+
+    }
 }

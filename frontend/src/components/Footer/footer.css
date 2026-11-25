@@ -1,47 +1,56 @@
-.end-ofthe-page{
-    background-color: pink;
-    height: 250px;
-    width: 1300px;
-    border-radius: 60px;
-    margin-left: 30PX;
-    align-items: center;
+/* ============ BANNER ============ */
+.end-ofthe-page {
+  width: calc(100% - 60px);
+  margin: 0 30px;
+  box-sizing: border-box;
+  min-height: 250px;
+  padding: 30px 20px;
+  background-color: pink;
+  border-radius: 60px;
+  display: flex;                 /* now align-items actually works */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
 }
 
-.end-ofthe-page button{
-       height: 40px;
-       width: 300px;
-       border-radius: 20px;
-       background-color: brown;
-       color: whitesmoke;
-       font-weight: 900;
-       text-transform: uppercase;
+.end-ofthe-page h1 {
+  margin: 0;
+  font-size: clamp(16px, 2.6vw, 32px);   /* scales with screen width */
 }
 
-/* ============ FOOTER LAYOUT (desktop) ============ */
+.end-ofthe-page button {
+  height: 40px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 20px;
+  background-color: brown;
+  color: whitesmoke;
+  font-weight: 900;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* ============ FOOTER ============ */
 .footer-page {
+  width: 100%;
+  box-sizing: border-box;
   display: grid;
-  grid-template-columns:
-    minmax(0, 1.2fr)   /* logo + email + icons */
-    minmax(0, 1fr)     /* shop */
-    minmax(0,1fr)       /* services: only as wide as its words */
-    minmax(0, 1fr)     /* about us */
-    minmax(0, 1.3fr);  /* help */
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1.3fr;
   gap: 40px;
-  padding: 40px 60px 50px 60px;
-  align-items: start;  /* every column starts at the same top line */
+  padding: 40px 60px 50px;
+  align-items: start;
   background-color: black;
   color: whitesmoke;
+  font-size: 15px;
+  /* no fixed height */
 }
 
-.footer-page-one {
-  text-align: left;
-}
+.footer-page-one { text-align: left; min-width: 0; }
 
-/* ============ LOGO + EMAIL + ICONS ============ */
-.footer-page-one img {
-  width: 130px;
-  height: 130px;
-}
+.footer-page-one img { width: 130px; height: 130px; }
 
 .footer-page-one form input {
   width: 100%;
@@ -51,27 +60,23 @@
 
 .footer-icons {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   gap: 15px;
   padding: 20px 0;
   font-size: 22px;
 }
 
-/* ============ HEADINGS ============ */
 .footer-page-one h4 {
   margin: 0 0 16px;
   font-style: italic;
   font-weight: 900;
   text-transform: uppercase;
-  color: whitesmoke;
 }
 
-/* ============ LISTS ============ */
 .footer-page-one ul {
   list-style: none;
   margin: 0;
-  padding: 0;          /* removes the default indent so first letters line up */
+  padding: 0;
   display: grid;
   gap: 12px;
 }
@@ -79,123 +84,50 @@
 .footer-page-one li {
   text-transform: capitalize;
   line-height: 1.4;
-  overflow-wrap: anywhere;   /* long lines wrap instead of widening the column */
+  overflow-wrap: anywhere;
 }
 
-/* Services list: 2 columns, reads down */
 .footer-page-one ul.services-list {
   grid-template-columns: repeat(2, max-content);
   grid-template-rows: repeat(6, auto);
   grid-auto-flow: column;
   column-gap: 32px;
-  row-gap: 12px;
 }
 
-@media(max-width:1280px){
-  .end-ofthe-page{
-    width: 1200px;
-    font-size: 15px;
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+  .footer-page {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 40px 30px;
+    gap: 30px;
   }
-  .end-ofthe-page button{
-    width: 200px;
-    height:32px;
-    padding: 0px 0px;
-    margin-top: 30px;
-  }
-  .footer-page{
-    width: 1200px;
-    height: 450px;
-    font-size: 15px;
-  }
-
+  .footer-page-one:first-child { grid-column: 1 / -1; }   /* logo row on top */
+  .footer-page-one img { width: 100px; height: 100px; }
 }
 
-@media(max-width:1024px){
-  .end-ofthe-page{
-    width: 950px;
-    font-size: 10px;
-    height: 180px;
+@media (max-width: 800px) {
+  .footer-page { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-page-one ul.services-list {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-flow: row;
   }
-  .end-ofthe-page button{
-    width: 150px;
-    height:25px;
-    margin-top: 30px;
-    font-size: 10px;
-  }
-  .footer-page{
-    width: 910px;
-    height: 420px;
-    font-size: 11px;
-  }
-  .footer-page-one img{
-    width: 100px;
-    height: 100px;
-  }
-  .input-type-image{
-    width:50px;
-    height: 20px;
-  }
-
-}
-@media(max-width:800px){
-  .end-ofthe-page{
-    width: 700px;
-    font-size: 8px;
-    height: 150px;
-    gap: 0px 0px;
-  }
-  .end-ofthe-page button{
-    width: 120px;
-    height:23px;
-    margin-top: 30px;
-    font-size: 8px;
-    
-  }
-  .footer-page{
-    width: 680px;
-    height: 420px;
-    font-size: 11px;
-  }
-  .footer-page-one img{
-    width: 100px;
-    height: 100px;
-  }
-  .input-type-image{
-    width:50px;
-    height: 20px;
-  }
-  .footer-icons svg{
-    width: 30px;
-    height: 20px;
-  }
-
 }
 
-@media(max-width:500px){
-  .end-ofthe-page{
-    width: 400px;
-    font-size: 5px;
-    height: 120px;
+@media (max-width: 500px) {
+  .end-ofthe-page {
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    border-radius: 30px;
+    min-height: 180px;
   }
-  .end-ofthe-page button{
-    width: 120px;
-    height:23px;
-    margin-top: 25px;
-    font-size: 8px;
-    
-  }
-  .footer-page{
-    width:380px;
-    height: 480px;
-    font-size:8px;
-  }
-  .footer-page-one img{
-    width: 50px;
-    height: 50px;
-  }
-  .input-type-image{
-    width:60px;
-    height:10px;
-  }
+  .end-ofthe-page button { height: 36px; font-size: 12px; }
 
+  .footer-page {
+    padding: 30px 16px;
+    gap: 24px 16px;
+    font-size: 13px;
+  }
+  .footer-page-one img { width: 70px; height: 70px; }
+  .footer-icons { font-size: 20px; }
 }

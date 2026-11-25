@@ -1,12 +1,13 @@
-import React, { useContext, useRef,useState} from "react";
+import React, { useContext, useRef, useState, useEffect } from "react";   // NEW: added useEffect
 import './Navbar.css'
 import logo from "../Assets/pexels-bookspace-36452123-Photoroom.png"
 import { FaShoppingCart } from "react-icons/fa";
 import { RxChevronDown } from "react-icons/rx";
 import { CgProfile } from "react-icons/cg";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ShopContext } from "../../context/ShopContext";
-import { FiAlignJustify } from "react-icons/fi"
+import { FiAlignJustify, FiSearch, FiX } from "react-icons/fi"            // NEW: added FiSearch, FiX
+
 function Navbar() {
 
     const { getTotalCartItem } = useContext(ShopContext);
@@ -19,14 +20,24 @@ function Navbar() {
     }
 
     const [query, setQuery] = useState("");
+    const [showSearch, setShowSearch] = useState(false);                  // NEW
+    const searchInputRef = useRef(null);                                  // NEW
     const navigate = useNavigate();
 
+    // NEW: focus the input automatically when it opens
+    useEffect(() => {
+        if (showSearch && searchInputRef.current) {
+            searchInputRef.current.focus();
+        }
+    }, [showSearch]);
+
     const handleSearch = (e) => {
-        e.preventDefault();                      // stops the page reload
+        e.preventDefault();
         const q = query.trim();
         if (!q) return;
         navigate(`/search?q=${encodeURIComponent(q)}`);
-        setQuery("");                            // optional: clear the box after searching
+        setQuery("");
+        setShowSearch(false);                                             // NEW: close box after searching
     };
 
     return (
@@ -48,7 +59,6 @@ function Navbar() {
                         <p>vyvera</p>
                     </div>
 
-
                     <ul ref={menuRef} className="navbar-menu">
                         <Link style={{ textDecoration: "none" }} to="/"><li>home <RxChevronDown /></li></Link>
                         <Link style={{ textDecoration: "none" }} to="/plants" ><li>plants <RxChevronDown /></li></Link>
@@ -58,8 +68,14 @@ function Navbar() {
                         <Link style={{ textDecoration: "none" }} to="/plantcare"><li>plant care <RxChevronDown /></li></Link>
                         <Link style={{ textDecoration: "none" }} to="/stores"><li>stores <RxChevronDown /></li></Link>
                     </ul>
-                    <form className="navbar-search-place" onSubmit={handleSearch}>
+
+                    {/* CHANGED: added dynamic className and the ref on the input */}
+                    <form
+                        className={`navbar-search-place ${showSearch ? "search-open" : ""}`}
+                        onSubmit={handleSearch}
+                    >
                         <input
+                            ref={searchInputRef}
                             type="search"
                             placeholder="Search seeds, plants, pots..."
                             aria-label="Search plants"
@@ -67,9 +83,20 @@ function Navbar() {
                             onChange={(e) => setQuery(e.target.value)}
                         />
                     </form>
+
                     <div className="Navbar-head-sign">
-                        <Link style={{ textDecorationL: "none", color: "black" }} to="/signin"><p><CgProfile /></p></Link>
-                        <Link style={{ textDecorationL: "none", color: "black" }} to="/cartpage"><p><FaShoppingCart /></p></Link>
+                        {/* NEW: search icon button, only visible on small screens (CSS controls this) */}
+                        <button
+                            type="button"
+                            className="search-icon-btn"
+                            aria-label="Toggle search"
+                            onClick={() => setShowSearch((prev) => !prev)}
+                        >
+                            {showSearch ? <FiX /> : <FiSearch />}
+                        </button>
+
+                        <Link style={{ textDecoration: "none", color: "black" }} to="/signin"><p><CgProfile /></p></Link>
+                        <Link style={{ textDecoration: "none", color: "black" }} to="/cartpage"><p><FaShoppingCart /></p></Link>
                         <div className="navbar-count-button">{getTotalCartItem()}</div>
                     </div>
 
@@ -78,7 +105,6 @@ function Navbar() {
                     </div>
                 </div>
                 <br />
-
             </div>
         </>
     )

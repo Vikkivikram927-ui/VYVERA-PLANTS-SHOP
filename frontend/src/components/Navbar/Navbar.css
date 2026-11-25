@@ -1,7 +1,11 @@
+.navbar {
+    padding: 5px 5px;
+}
+
 .navbar-bottom {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 6px;
     margin-top: -25px;
 }
 
@@ -84,10 +88,14 @@
 }
 
 .bottom-navbar-first-one {
+    width: 100%;
+    box-sizing: border-box;
+    /* fixes the 360px overflow */
     overflow: hidden;
     background: #2e7d32;
     color: #fff;
-    padding: 10px;
+    padding: 10px 0;
+    /* no side padding, so nothing clips at the edges */
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -95,12 +103,41 @@
 .scroll-text {
     display: flex;
     width: max-content;
+    /* so the % in the animation is based on the real content width */
     animation: scroll 15s linear infinite;
 }
 
 .scroll-text span {
+    flex-shrink: 0;
     padding: 0 40px;
     white-space: nowrap;
+}
+
+.search-icon-btn {
+    display: none;
+    /* hidden on desktop */
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+    padding: 0 6px;
+}
+
+.navbar-bottom {
+    position: relative;
+    /* so the input can drop below the bar */
+}
+
+/* 4 identical spans, so -50% = exactly 2 spans, which gives a seamless loop */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 .navigation-bar {
@@ -271,8 +308,126 @@
 
     .menu-ref-visible {
         margin-left: 238px;
-        margin-top:90px;
+        margin-top: 90px;
 
     }
 
+}
+
+@media (min-width: 360px) and (max-width: 390px) {
+    .bottom-navbar-first-one {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .scroll-text span {
+        padding: 0 24px;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+
+    .bottom-navbar-first-one img {
+        display: none;
+    }
+
+    .bottom-navbar-first-one p {
+        font-size: 5px;
+    }
+
+    .search-icon-btn {
+        display: block;
+        margin-left: -24px;
+    }
+
+    .navbar-search-place {
+        display: none;
+        /* input hidden by default on small screens */
+    }
+
+    .navbar-search-place.search-open {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 8px 10px;
+        background: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+    }
+
+    .navbar-search-place.search-open input {
+        width: 100%;
+        padding: 8px 12px;
+    }
+
+    .Navbar-head-sign p {
+        padding: 0;
+    }
+
+    .menu-ref-visible {
+        width: 43%;
+        height: 300px;
+        background-color: black;
+        margin-left: 140px;
+        margin-top: 80px;
+    }
+
+}
+
+/* 391px to 450px, covers 412px phones */
+@media (min-width: 391px) and (max-width: 450px) {
+    .bottom-navbar-first-one {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .scroll-text span {
+        padding: 0 28px;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+
+    .search-icon-btn {
+        display: block;
+        margin-left: 5px;
+    }
+
+    .navbar-search-place {
+        display: none;               /* hidden until the icon is clicked */
+    }
+
+    .navbar-search-place.search-open {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 8px 10px;
+        background: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+    }
+
+    .navbar-search-place.search-open input {
+        width: 80%;
+        box-sizing: border-box;
+        padding: 8px 12px;
+    }
+
+    .Navbar-head-sign p {
+        padding: 0;
+    }
+
+    .menu-ref-visible {
+        width: 39%;
+        height: 300px;
+        background-color: black;
+        margin-left: 190px;          /* a bit more than 140px because the screen is wider */
+        margin-top: 80px;
+    }
 }

@@ -45,19 +45,19 @@ function MainPage() {
                 <div className="plants-second-one">
                     <i className="icon-circle"><GiPlantSeed /></i>
                     <h3>Seeds</h3>
-                    <p>Grow your own seeds</p>
+                    <p>Grow own seeds</p>
                 </div>
 
                 <div className="plants-second-two">
                     <i className="icon-circle"><FaTools /></i>
                     <h3>Materials</h3>
-                    <p>Buy your own materials</p>
+                    <p>Buy own meterails</p>
                 </div>
 
                 <div className="plants-second-three">
                     <i className="icon-circle"><VscOpenInProduct /></i>
                     <h3>Products</h3>
-                    <p>Buy your own products</p>
+                    <p>Buy own products</p>
                 </div>
 
                 <div className="plants-second-four">

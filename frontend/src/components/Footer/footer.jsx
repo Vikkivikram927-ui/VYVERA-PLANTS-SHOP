@@ -33,7 +33,7 @@ function FooterPage() {
 
                 <div className="footer-page-one">
                     <h4>shop</h4>
-                    <ul>
+                    <ul className="services-list">
                         <li>plants</li>
                         <li>seeds</li>
                         <li>pots</li>
@@ -45,7 +45,7 @@ function FooterPage() {
 
                 <div className="footer-page-one">
                     <h4>services</h4>
-                    <ul>
+                    <ul  className="services-list">
                         <li>plants</li>
                         <li>seeds</li>
                         <li>pots</li>
@@ -63,7 +63,7 @@ function FooterPage() {
 
                 <div className="footer-page-one">
                     <h4>about us</h4>
-                    <ul>
+                    <ul  className="services-list">
                         <li>contact us</li>
                         <li>our story</li>
                         <li>careers</li>
@@ -76,7 +76,7 @@ function FooterPage() {
 
                 <div className="footer-page-one">
                     <h4>help</h4>
-                    <ul>
+                    <ul  className="services-list">
                         <li>10 days plant guarante</li>
                         <li>shipping</li>
                         <li>care guides</li>

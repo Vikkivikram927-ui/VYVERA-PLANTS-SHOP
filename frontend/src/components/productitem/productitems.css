@@ -1,16 +1,3 @@
-.product-items img {
-    width: 250px;
-    height: 250px;
-    gap: 20px 20px;
-    padding: 10px 10px;
-}
-
-.product-items {
-    width: 300px;
-    height: 420px;
-    background-color: rgb(236, 236, 185);
-    border-radius: 15px;
-}
 .shop-cetegary-page {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -19,43 +6,61 @@
     margin-top: -40px;
 }
 
+.product-items {
+    width: 100%;                 /* fills its grid column */
+    height: auto;                /* grows with content, no fixed 420px */
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: rgb(236, 236, 185);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
-@media(max-width:1024px) {
-    .product-items img {
-        width: 160px;
-        height: 160px;
-    }
+.product-items img {
+    width: 100%;                 /* fills the card */
+    height: auto;
+    aspect-ratio: 1 / 1;         /* keeps all images square */
+    object-fit: cover;
+    border-radius: 10px;
+    padding: 0;
+}
 
-    .product-items {
-        width: 230px;
-        height: 350px;
+@media (max-width: 1024px) {
+    .shop-cetegary-page {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
     }
 }
 
-@media(max-width:800px){
-       .product-items img {
-        width: 130px;
-        height: 160px;
+@media (max-width: 800px) {
+    .shop-cetegary-page {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
     }
-
-    .product-items {
-        width: 175px;
-        height:370px;
-    }
-    
 }
 
 @media (max-width: 500px) {
     .shop-cetegary-page {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
+        padding: 8px;
+        gap: 10px;
+    }
+    .product-items {
+        padding: 8px;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 390px){
+   .shop-cetegary-page {
         padding: 5px;
+        gap: 10px;
     }
-    .product-items{
-        width: 230px;
-        height: 340px;
-        gap: 10px 10px 10px;
-        justify-content: space-between;
-        
+    .product-items {
+        padding: 8px;
     }
+}
+
+@media (min-width: 391px) and (max-width: 450px){
+
 }
