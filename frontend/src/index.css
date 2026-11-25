@@ -1,0 +1,15 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: clip;   /* stops sideways scroll without breaking sticky */
+}
+
+img {
+    max-width: 100%;
+}
