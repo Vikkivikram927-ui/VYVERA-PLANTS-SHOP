@@ -1,9 +1,10 @@
-
 import React, { useContext } from "react";
 import "./CartItemPage.css";
 import { MdDelete } from "react-icons/md";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { ShopContext } from "../../context/ShopContext";
+
+const FREE_SHIPPING_MIN = 599;
 
 function CartItemPage() {
     const {
@@ -28,13 +29,13 @@ function CartItemPage() {
 
     // Discount: 10%
     const discountPercentage = 10;
-    const discount = subtotal * (discountPercentage / 100);
+    const discount = subtotal >= 1499 ? subtotal * 0.1 : 0;
 
     // Delivery charge
     const deliveryCharge =
-        subtotal === 0 ? 0 : subtotal >= 999 ? 0 : 50;
+        subtotal === 0 ? 0 : subtotal >= FREE_SHIPPING_MIN ? 0 : 50;
 
-    // Final total
+    // Final total (this line was missing)
     const finalTotal = subtotal - discount + deliveryCharge;
 
     return (
@@ -42,6 +43,8 @@ function CartItemPage() {
 
             {/* Cart Products */}
             <div className="cart-products">
+                {totalCartItems === 0 && <p>Your cart is empty.</p>}
+
                 {allproducts.map((e) => {
                     if ((cartItem[e.id] || 0) > 0) {
                         return (
@@ -57,21 +60,16 @@ function CartItemPage() {
                                     <div className="puma-qty-pass">
                                         <h4>{e.name}</h4>
                                         <p>{e.description}</p>
-                                        <i>
-                                            ${(e.price * cartItem[e.id]).toFixed(2)}
-                                        </i>
+                                        <i>₹{(e.price * cartItem[e.id]).toFixed(2)}</i>
                                     </div>
                                 </div>
 
                                 <div className="qty-and-cart">
                                     <div className="qty-icons-button">
-
                                         <button
                                             type="button"
                                             className="qty-button"
-                                            onClick={() =>
-                                                RemoveToCart(e.id)
-                                            }
+                                            onClick={() => RemoveToCart(e.id)}
                                             disabled={cartItem[e.id] <= 1}
                                         >
                                             <FaMinus />
@@ -83,22 +81,17 @@ function CartItemPage() {
 
                                         <button
                                             type="button"
-                                            className="qty-button-query"
-                                            onClick={() =>
-                                                AddToCart(e.id)
-                                            }
+                                            className="qty-button"
+                                            onClick={() => AddToCart(e.id)}
                                         >
                                             <FaPlus />
                                         </button>
-
                                     </div>
 
                                     <button
                                         type="button"
                                         className="delete-icon"
-                                        onClick={() =>
-                                            DeleteFromCart(e.id)
-                                        }
+                                        onClick={() => DeleteFromCart(e.id)}
                                         aria-label={`Remove ${e.name} from cart`}
                                     >
                                         <MdDelete />
@@ -113,7 +106,7 @@ function CartItemPage() {
                 })}
             </div>
 
-            {/* Cart Summary - OUTSIDE map */}
+            {/* Cart Summary */}
             <div className="cart-summary">
                 <h2>Cart Summary</h2>
 
@@ -124,14 +117,12 @@ function CartItemPage() {
 
                 <div className="summary-row">
                     <span>Subtotal</span>
-                    <span>${subtotal.toFixed(2)}</span>
+                    <span>₹{subtotal.toFixed(2)}</span>
                 </div>
 
                 <div className="summary-row">
                     <span>Discount ({discountPercentage}%)</span>
-                    <span className="discount">
-                        -${discount.toFixed(2)}
-                    </span>
+                    <span className="discount">-₹{discount.toFixed(2)}</span>
                 </div>
 
                 <div className="summary-row">
@@ -139,7 +130,7 @@ function CartItemPage() {
                     <span>
                         {deliveryCharge === 0
                             ? "FREE"
-                            : `$${deliveryCharge.toFixed(2)}`}
+                            : `₹${deliveryCharge.toFixed(2)}`}
                     </span>
                 </div>
 
@@ -147,14 +138,14 @@ function CartItemPage() {
 
                 <div className="summary-row final-total">
                     <h3>Total</h3>
-                    <h3>${finalTotal.toFixed(2)}</h3>
+                    <h3>₹{finalTotal.toFixed(2)}</h3>
                 </div>
 
                 {subtotal > 0 && (
                     <p className="delivery-message">
-                        {subtotal >= 999
+                        {subtotal >= FREE_SHIPPING_MIN
                             ? "Congratulations! You got free delivery."
-                            : `Shop for $${(999 - subtotal).toFixed(2)} more to get free delivery.`}
+                            : `Shop for ₹${(FREE_SHIPPING_MIN - subtotal).toFixed(2)} more to get free delivery.`}
                     </p>
                 )}
 
@@ -162,9 +153,7 @@ function CartItemPage() {
                     type="button"
                     className="checkout-btn"
                     disabled={totalCartItems === 0}
-                    onClick={() =>
-                        alert("Connect your checkout page here!")
-                    }
+                    onClick={() => alert("Connect your checkout page here!")}
                 >
                     Proceed to Checkout
                 </button>

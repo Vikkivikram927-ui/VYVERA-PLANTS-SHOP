@@ -1,3 +1,4 @@
+/* ============ PAGE LAYOUT ============ */
 .cart-page {
     display: flex;
     justify-content: space-between;
@@ -60,7 +61,6 @@
     font-family: sans-serif;
     margin: 0;
     color: #666;
-    text-shadow: none;
 }
 
 .puma-qty-pass i {
@@ -70,14 +70,12 @@
     color: #234b35;
 }
 
-/* Quantity and delete */
+/* ============ QUANTITY + DELETE ============ */
 .qty-and-cart {
     display: flex;
     align-items: center;
     gap: 15px;
     flex-shrink: 0;
-    margin: 0;
-    padding: 0;
 }
 
 .qty-icons-button {
@@ -88,13 +86,9 @@
     padding: 8px 12px;
     border: 1px solid #ccc;
     border-radius: 20px;
-    width: auto;
-    height: auto;
-    margin: 0;
 }
 
 .qty-button,
-.qty-button-query,
 .delete-icon {
     display: flex;
     justify-content: center;
@@ -111,7 +105,8 @@
 }
 
 .quantity-number {
-    padding: 0;
+    min-width: 20px;
+    text-align: center;
 }
 
 .delete-icon {
@@ -124,12 +119,11 @@
     color: #234b35;
 }
 
-/* Cart summary */
+/* ============ CART SUMMARY ============ */
 .cart-summary {
     width: 100%;
     max-width: 420px;
     flex-shrink: 0;
-    margin: 0;
     padding: 25px;
     background: #fff;
     border: 1px solid #e5e5e5;
@@ -140,6 +134,7 @@
 }
 
 .cart-summary h2 {
+    margin-top: 0;
     margin-bottom: 25px;
     color: #234b35;
 }
@@ -170,83 +165,4 @@
     color: #218838;
     font-size: 14px;
     margin: 20px 0;
-}
-
-.checkout-btn {
-    width: 100%;
-    padding: 14px;
-    background: #234b35;
-    color: white;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.checkout-btn:disabled {
-    background: #aaa;
-    cursor: not-allowed;
-}
-
-.checkout-btn:hover:not(:disabled) {
-    background: #183725;
-}
-
-@media(max-width:800px) {
-    .cartitems-format img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .puma-qty-pass {
-        font-size: 10px;
-    }
-
-    .qty-icons-button {
-        height: 20px;
-        width: 50px;
-    }
-
-    .delete-icon {
-        width: 25px;
-        height: 25px;
-    }
-
-    .cart-summary {
-        width: 400px;
-        height: 440px;
-    }
-
-}
-
-@media(max-width:500px) {
-    .cartitems-format img {
-        width: 30px;
-        height: 30px;
-        margin-left: -20px;
-    }
-
-    .qty-and-cart{
-        margin-left: 60px;
-        margin-top: 20px;
-    }
-
-    .qty-icons-button{
-        width: 40px;
-        height: 20px;
-        font-size: 12px;
-        border-radius: 10px;
-    }
-
-    .qty-icons-button svg{
-        font-size: 8px;
-    }
-
-    .cart-summary {
-        width: 230px;
-        height: 400px;
-        font-size: 13px;
-        margin-left: 160px;
-        margin-top: -20px;
-    }
 }
