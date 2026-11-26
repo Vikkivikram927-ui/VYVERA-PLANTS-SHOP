@@ -10,6 +10,23 @@ A MERN e-commerce site for plants, seeds and pots, with a separate admin panel.
 - Store locator pulled from the database
 - Admin panel to add and remove products
 
+## Screenshots
+
+### Homepage
+![Homepage](https://res.cloudinary.com/kytwg0mg/image/upload/f_auto,q_auto,w_800/v1795692271/vgh0xd2oe511lsd3luak.jpg)
+
+### Products page
+![Products page](https://res.cloudinary.com/kytwg0mg/image/upload/f_auto,q_auto,w_800/v1795692113/oaqqeeir8hexdwzpisal.jpg)
+
+### Breadcrumb
+![Breadcrumb](https://res.cloudinary.com/kytwg0mg/image/upload/f_auto,q_auto,w_800/v1795692331/tlqdjc4ijjevligxyrra.jpg)
+
+### Cart page
+![Cart page](https://res.cloudinary.com/kytwg0mg/image/upload/f_auto,q_auto,w_800/v1795692469/gyj20yyerxbga6vwrmnv.jpg)
+
+### My orders
+![My orders](https://res.cloudinary.com/kytwg0mg/image/upload/f_auto,q_auto,w_800/v1795692596/fnrrxoh1s8cnf9ybq5mn.jpg)
+
 ## Tech stack
 React (shop: Create React App, admin: Vite), Node.js, Express, MongoDB (Mongoose)
 
