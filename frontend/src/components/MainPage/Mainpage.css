@@ -5,7 +5,7 @@
 }
 
 .after-main-entrace h1 {
-    margin-right: 300px;
+    margin-right: 250px;
     margin-top: -450px;
     color: #054408;
     padding: 20px 20px;
@@ -290,7 +290,7 @@
     .main-entrace h1 {
         font-size: 5px;
         text-transform: capitalize;
-        padding-left: 60px;
+        padding-left: 100px;
 
     }
 
