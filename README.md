@@ -2,6 +2,13 @@
 
 A MERN e-commerce site for plants, seeds and pots, with a separate admin panel.
 
+## 🔗 Live Links
+
+| Site | URL |
+|------|-----|
+| 🛒 **Store (VYVERA E-COMMERCE)** | [https://vyvera-plants-shop-delta.vercel.app/](https://vyvera-plants-shop-delta.vercel.app/) |
+| 🛠️ **Admin Panel** | [https://vyvera-plants-shop-7ahr.vercel.app/](https://vyvera-plants-shop-7ahr.vercel.app/) |
+
 ## Features
 - Product listing by category, with search
 - Cart and user login (JWT)
